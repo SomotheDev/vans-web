@@ -78,6 +78,7 @@
     font-size: medium;
     font-weight: 700;
     width: 50%;
+    align-self: center;
 }
 
 .link-icon{
