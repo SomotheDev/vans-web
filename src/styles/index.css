@@ -11,14 +11,24 @@
     position: relative;
 }
 
+a{
+    text-decoration: none;
+}
+
+.page-wrapper{
+    margin: 10px;
+    text-align: center;
+}
+
 /* Header Styles */
 
 .header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: center;
     padding: 10px 20px 2px;
-    border-bottom: 2px solid cornflowerblue;
+    background-color: rgb(224, 231, 245);
+    /* border-bottom: 1px solid cornflowerblue; */
     width: 100%;
 }
 
@@ -48,11 +58,11 @@
 
 .homepage{
     padding: 20px;
-    background: linear-gradient(rgba(0, 0, 0 ,0.5), rgba(0,0,0,0.5)), url('/src/assets/images/homeImg.jpg');
+    background: linear-gradient(rgba(0, 0, 0 ,0.5), rgba(0,0,0,1.5)), url('/src/assets/images/homeImg.jpg');
     background-position: center;
     background-size: cover;
     width: 100%;
-    height:72.5vh;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,6 +150,7 @@
     justify-content: center;
     align-content: center;
 }
+
 .vans-page, .van-card{
     display: flex;
     flex-wrap: wrap;
@@ -148,19 +159,68 @@
 
 .van-card{
     flex-direction: column;
+    margin-block: 15px;
 }
 
 .van-card img{
     width: 150px;
     height: 150px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
 }
 
-.van-card .details{
+.van-card .van-type, .vanDetail-card .vanDetail-type{
+    width: 70px;
+    padding: 5px 15px;
+    border-radius: 2px;
+    color: white;
+}
+
+.van-card .details, .vanDetail-card .details{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+.type.selected{
+    color:cornflowerblue;
+}
+
+.van-type.simple:hover, .van-type.simple.selected, .vanDetail-type.simple:hover, .vanDetail-type.simple.selected, .van-det.simple {
+    background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected, .vanDetail-type.rugged:hover, .vanDetail-type.rugged.selected, .van-det.rugged {
+    background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected, .vanDetail-type.luxury:hover, .vanDetail-type.luxury.selected, .van-det.luxury {
+    background-color: #161616;
+}
+
+.vanDetail-card{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.vanDetail-card img{
+    border-radius: 5px;
+    margin-block: 47px;
+}
+
+.vanDetail-card button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E17654;
+    color: white;
+    font-size: medium;
+}
+
+.back-to-vans{
+    margin-bottom: 10px;
+}
 
 
 /* Vans Styles End */
@@ -170,13 +230,13 @@
 .footer{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     padding: 20px;
-    border-top: 2px solid cornflowerblue;
-    height: 70px;
+    height: 10
+     0px;
     width: 100%;
-    background-color: rgb(1, 7, 18);
-    color:white;
+    background-color: rgb(224, 231, 245);
+    color:rgb(0, 0, 0);
 }
 
 /* Footer Styles End */

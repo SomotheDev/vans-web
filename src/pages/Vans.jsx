@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Vans = () => {
   const [vans, setVans] = React.useState([])
@@ -11,18 +12,23 @@ const Vans = () => {
 
   const vansList = vans.map(van=>(
     <div className="van-card" key ={van.id}>
-      <img src={van.imageUrl} alt="" />
-      <div className="details">
-        <h4>{van.name}</h4>
-        <span>${van.price}/day</span>
-      </div>
-      <span className='type'>{van.type}</span>
+      <Link to={`/vans/${van.id}`}>
+        <img src={van.imageUrl} alt="" />
+        <div className="details">
+          <h4>{van.name}</h4>
+          <span>${van.price}/day</span>
+        </div>
+      </Link>
+      <span className={`van-type ${van.type} selected`}>{van.type}</span>
     </div>
   ))
   return ( 
-    <div className='vans-page'>
-      {vans? vansList : <h1>Loading ...</h1>}
-    </div>
+    <main className='page-wrapper'>
+      <h1>Explore our van options</h1>
+      <div className='vans-page'>
+        {vansList}
+      </div>        
+    </main>
   )
 }
 
