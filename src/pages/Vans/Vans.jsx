@@ -23,8 +23,8 @@ const Vans = () => {
     </div>
   ))
   return ( 
-    <main className='page-wrapper'>
-      <h1>Explore our van options</h1>
+    <main className='page-wrapper flex flex-col h-lvh'>
+      <h1 className='text-4xl'>Explore our van options</h1>
       <div className='vans-page'>
         {vansList}
       </div>        

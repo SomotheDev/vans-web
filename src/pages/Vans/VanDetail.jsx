@@ -12,9 +12,9 @@ const VanDetail = () => {
             .then(data => letVan(data.vans))
     },[id])
   return (
-    <div >
+    <div className='h-full'>
         {van ? 
-            (<div className = 'vanDetail-card'>
+            (<div className = 'vanDetail-card h-full'>
                 <div className="back-to-vans">
                     <Link to = '/vans'> &larr; Back to vans </Link>
                 </div>
@@ -27,7 +27,7 @@ const VanDetail = () => {
                 <p>{van.description}</p>
                 <button className={`van-det ${van.type}`}>Rent this van</button> 
             </div>
-        ) : <h1>loading van ... </h1>}  
+        ) : <h1 className='ml-52 text-4xl'>loading van ... </h1>}  
     </div>
   )
 }

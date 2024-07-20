@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .host{
+        @apply flex flex-col;
+    }
+
+    a{
+        @apply cursor-pointer transition ease-in-out;
+    }
+
+    .active-link{
+        @apply text-cyan-500 underline-offset-4 underline;
+    }
+}
+
+
 *{
     padding: 0;
     margin: 0;
@@ -20,6 +39,10 @@ a{
     text-align: center;
 }
 
+.page-wrapper h1{
+    
+}
+
 /* Header Styles */
 
 .header{
@@ -27,8 +50,6 @@ a{
     justify-content: space-between;
     align-content: center;
     padding: 10px 20px 2px;
-    background-color: rgb(224, 231, 245);
-    /* border-bottom: 1px solid cornflowerblue; */
     width: 100%;
 }
 
@@ -82,7 +103,6 @@ a{
 .find-van{
     background-color: cornflowerblue;
     padding: 15px;
-    /* border-radius: 5px; */
     color: white;
     border: none;
     font-size: medium;
@@ -136,7 +156,7 @@ a{
     color:white;
     background-color: black;
     width: 150px;
-}
+} 
 
 /* About Styles End */
 
@@ -206,7 +226,7 @@ a{
 }
 .vanDetail-card img{
     border-radius: 5px;
-    margin-block: 47px;
+    margin-block: 20px;
 }
 
 .vanDetail-card button{
@@ -219,7 +239,6 @@ a{
 }
 
 .back-to-vans{
-    margin-bottom: 10px;
 }
 
 
@@ -235,7 +254,7 @@ a{
     height: 10
      0px;
     width: 100%;
-    background-color: rgb(224, 231, 245);
+    background: linear-gradient(rgb(224, 231, 245), rgb(224, 231, 245));
     color:rgb(0, 0, 0);
 }
 
