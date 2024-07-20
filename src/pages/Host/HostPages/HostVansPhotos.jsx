@@ -5,7 +5,13 @@ const HostVansPhotos = () => {
 
     const {van} = useOutletContext()
   return (
-    <div className='flex px-4 py-3'>
+    <div className='flex gap-3 overflow-scroll px-4 py-3'>
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
+        <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
         <img className='w-24 rounded-md' src={van.imageUrl} alt=""  />
     </div>
   )
