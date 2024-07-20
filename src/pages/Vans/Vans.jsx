@@ -23,7 +23,7 @@ const Vans = () => {
     </div>
   ))
   return ( 
-    <main className='page-wrapper h-lvh'>
+    <main className='page-wrapper'>
       <h1 className='text-4xl'>Explore our van options</h1>
       <div className='vans-page grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center place-items-center gap-4'>
         {vansList}
