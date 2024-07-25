@@ -259,3 +259,15 @@ a{
 }
 
 /* Footer Styles End */
+
+.simple-selected{
+    background-color: #E17654;
+}
+
+.luxury-selected{
+    background-color: #161616;
+}
+
+.rugged-selected{
+    background-color: #115E59;
+}

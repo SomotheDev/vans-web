@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 const Vans = () => {
   const [vans, setVans] = React.useState([])
@@ -10,7 +10,13 @@ const Vans = () => {
       .then(data => setVans(data.vans))
   },[])
 
-  const vansList = vans.map(van=>(
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const typeFilter = searchParams.get('type')
+
+  const filterVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
+
+  const vansList = filterVans.map(van=>(
     <div className="van-card" key ={van.id}>
       <Link to={`/vans/${van.id}`}>
         <img src={van.imageUrl} alt="" />
@@ -23,8 +29,16 @@ const Vans = () => {
     </div>
   ))
   return ( 
-    <main className='page-wrapper'>
+    <main className='page-wrapper justify-center'>
       <h1 className='text-4xl'>Explore our van options</h1>
+      <div className="flex items-center justify-center pt-4 gap-3">
+        <button className={`${typeFilter === 'simple'? 'simple-selected':''} bg-slate-400 text-white hover:bg-[#E17654]  hover:text-white p-4 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'simple'})}>Simple</button>
+        <button className={`${typeFilter === 'luxury'? 'luxury-selected':''} bg-slate-400 text-white hover:bg-[#161616] hover:text-white over:text-white p-4 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'luxury'})}>Luxury</button>
+        <button className={`bg-slate-400 text-white hover:bg-[#115E59] hover:text-white p-4 rounded-md hover:underline underline-offset-4 ${typeFilter === 'rugged'? 'rugged-selected':''}`} onClick={()=> setSearchParams({type: 'rugged'})}>Rugged</button>
+
+        {typeFilter && <button className='p-4 rounded-md hover:underline underline-offset-4' onClick={()=> setSearchParams({})}>Clear</button>}
+        
+      </div>
       <div className='vans-page grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center place-items-center gap-4'>
         {vansList}
       </div>        

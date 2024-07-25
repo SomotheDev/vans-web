@@ -5,8 +5,24 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'simple-selected': '#E17654', // Change the color as per your requirement
+      }
+    }
   },
-  plugins: [],
+  variants: {
+    extend: {
+      backgroundColor: ['simple-selected'],
+    }
+  },
+  plugins: [
+    function({ addVariant, e }) {
+      addVariant('simple-selected', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`simple-selected${separator}${className}`)}::selection`;
+        });
+      });
+    }
+  ]
 }
-
