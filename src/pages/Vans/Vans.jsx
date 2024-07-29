@@ -32,11 +32,11 @@ const Vans = () => {
     <main className='page-wrapper justify-center'>
       <h1 className='text-4xl'>Explore our van options</h1>
       <div className="flex items-center justify-center pt-4 gap-3">
-        <button className={`${typeFilter === 'simple'? 'simple-selected':''} bg-slate-400 text-white hover:bg-[#E17654]  hover:text-white p-4 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'simple'})}>Simple</button>
-        <button className={`${typeFilter === 'luxury'? 'luxury-selected':''} bg-slate-400 text-white hover:bg-[#161616] hover:text-white over:text-white p-4 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'luxury'})}>Luxury</button>
-        <button className={`bg-slate-400 text-white hover:bg-[#115E59] hover:text-white p-4 rounded-md hover:underline underline-offset-4 ${typeFilter === 'rugged'? 'rugged-selected':''}`} onClick={()=> setSearchParams({type: 'rugged'})}>Rugged</button>
+        <button className={`${typeFilter === 'simple'? 'simple-selected':''} bg-slate-400 text-white hover:bg-[#E17654] hover:text-white p-1 px-8 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'simple'})}>Simple</button>
+        <button className={`${typeFilter === 'luxury'? 'luxury-selected':''} bg-slate-400 text-white hover:bg-[#161616] hover:text-white p-1 px-8 rounded-md hover:underline underline-offset-4`} onClick={()=> setSearchParams({type: 'luxury'})}>Luxury</button>
+        <button className={`${typeFilter === 'rugged'? 'rugged-selected':''} bg-slate-400 text-white hover:bg-[#115E59] hover:text-white p-1 px-8 rounded-md hover:underline underline-offset-4 `} onClick={()=> setSearchParams({type: 'rugged'})}>Rugged</button>
 
-        {typeFilter && <button className='p-4 rounded-md hover:underline underline-offset-4' onClick={()=> setSearchParams({})}>Clear</button>}
+        {typeFilter && <button className='p-1 px-8 rounded-md border-2 hover:underline underline-offset-4' onClick={()=> setSearchParams({})}>Clear</button>}
         
       </div>
       <div className='vans-page grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center place-items-center gap-4'>
